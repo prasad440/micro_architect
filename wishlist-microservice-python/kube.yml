@@ -2,35 +2,35 @@
   kind: "Service"
   metadata:
     labels:
-      app: "offer-ui"
-    name: "offer"
+      app: "wishlist-ui"
+    name: "wishlist"
   spec:
     ports:
     - name: "http"
-      port: 1001
-      targetPort: 1001
+      port: 1003
+      targetPort: 5000
     selector:
-      app: "offer-ui" 
+      app: "wishlist-ui" 
 ---  
   apiVersion: apps/v1
   kind: Deployment
   metadata:
-    name: "offer-ui"
+    name: "wishlist-ui"
     labels: 
-      app: offer-ui
+      app: wishlist-ui
   spec:
     replicas: 1
     selector:
         matchLabels:
-          app: "offer-ui"
+          app: "wishlist-ui"
     template:
       metadata:
         labels:
-          app: offer-ui
+          app: wishlist-ui
       spec:
         containers:
-          - name: "offer-ui"
-            image: "prasad440/offer"
+          - name: "shoe-ui"
+            image: "prasad440/wishlist"
             imagePullPolicy: "IfNotPresent"
             ports:
-              - containerPort: 1001
+              - containerPort: 5000
