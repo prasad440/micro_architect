@@ -1,6 +1,6 @@
 FROM node:14
-WORKDIR /app
+WORKDIR /app 
 COPY . .
 RUN npm install
 EXPOSE 1004
-CMD [ "node", "index.js" ]
+CMD ["node","index.js"]
