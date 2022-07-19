@@ -32,7 +32,7 @@
       spec:
         containers:
           - name: "zuul-api-gateway"
-            image: "prasad440/zuul-api"
+            image: "prasad440/zuul"
             imagePullPolicy: "IfNotPresent"
             ports:
               - containerPort: 9999
